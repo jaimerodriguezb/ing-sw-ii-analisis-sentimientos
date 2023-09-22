@@ -4,4 +4,14 @@ class Analizador():
         pass
 
     def analizar(self, mensaje):
-        return 'POSITIVO'
+        pass
+        # if mensaje == 'POSITIVO':
+        #     return 'POSITIVO'
+        # elif mensaje == 'NEUTRO':
+        #     return 'NEUTRO'
+
+
+    
+    
+
+    
