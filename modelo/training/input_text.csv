@@ -1,2 +1,0 @@
-tweet_id,airline_sentiment,airline_sentiment_confidence,negativereason,negativereason_confidence,airline,airline_sentiment_gold,name,negativereason_gold,retweet_count,text,tweet_coord,tweet_created,tweet_location,user_timezone
-570256553502068736,negative,1.0,Customer Service Issue,0.3557,Virgin America,,ayeevickiee,,0,@VirginAmerica you guys messed up my seating.. I reserved seating with my friends and you guys gave my seat away ... 😡 I want free internet,,2015-02-24 08:18:51 -0800,714,Mountain Time (US & Canada)
