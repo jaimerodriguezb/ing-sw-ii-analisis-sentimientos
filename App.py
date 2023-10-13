@@ -26,11 +26,11 @@ analizador.add_argument(
     location='args')
 
 resource_fields = api.model('Resource', {
-    'result': fields.Integer,
+    'Tu sentimiento expresado es : ': fields.Integer,
 })
 
-@ns.route('/gates')
-class LogicGategApi(Resource):
+@ns.route('/Sentimientos..')
+class AnalizadorApi(Resource):
 
     @api.doc(parser=analizador)
     @api.marshal_with(resource_fields)
@@ -38,7 +38,7 @@ class LogicGategApi(Resource):
         args = analizador.parse_args()
 
         return {
-         "result": analizador.analizar(args['comentario'])
+         "Tu sentimiento expresado es : ": analizador.analizar(args['comentario'])
         }, 200
 
 if __name__ == '__main__':

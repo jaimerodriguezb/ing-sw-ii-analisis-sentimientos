@@ -33,3 +33,13 @@ def test_sentimiento_negativo(mocker, mensaje_negativo):
     resultado = Analizador().analizar(mensaje_negativo)
 
     assert resultado == 'NEGATIVO'
+
+"""
+
+✈️ Thanks @XYZAirlines for the ultra-comfy flight! Your service made me feel right at home in the skies. 🌟 #FlyingInComfort #XYZAirlines
+
+🤔 Hey @XYZAirlines, how can I change my reservation? I need a little help, please! 🙏 #ReservationAssistance #XYZAirlines
+
+😡 Disappointed with @XYZAirlines today – my flight was seriously delayed. Time is precious, and punctuality matters! ⏰ #LateFlight #XYZAirlines
+
+"""
