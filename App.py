@@ -19,17 +19,17 @@ ns = api.namespace('Analizador')
 analizador = api.parser()
 
 analizador.add_argument(
-    'Comentario', 
+    'Comentario',
     type=str, 
     required=True,
-    help='Ingrese un comentario', 
+    help='Ingrese un comentario ...', 
     location='args')
 
 resource_fields = api.model('Resource', {
-    'Tu sentimiento expresado es : ': fields.Integer,
+    'Sentimiento': fields.String,
 })
 
-@ns.route('/Sentimientos..')
+@ns.route('/Sentimientos')
 class AnalizadorApi(Resource):
 
     @api.doc(parser=analizador)
@@ -37,8 +37,8 @@ class AnalizadorApi(Resource):
     def get(self):
         args = analizador.parse_args()
 
-        return {
-         "Tu sentimiento expresado es : ": analizador.analizar(args['comentario'])
+        return{
+            'Sentimiento': analizar.analizar(args['Comentario'])
         }, 200
 
 if __name__ == '__main__':
