@@ -26,3 +26,5 @@ class Analizador():
             return "NEUTRO"
         elif sentimiento == 1:
             return "POSITIVO"
+    
+    
