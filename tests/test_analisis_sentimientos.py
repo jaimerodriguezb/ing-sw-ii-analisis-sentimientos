@@ -15,7 +15,7 @@ def mensaje_negativo():
 
 @pytest.fixture
 def mensajes():
-    return ["POSITIVO", "NEUTRO", "NEGATIVO"]
+    return ["✈️ Thanks @XYZAirlines for the ultra-comfy flight! Your service made me feel right at home in the skies. 🌟 #FlyingInComfort #XYZAirlines", "🤔 Hey @XYZAirlines, how can I change my reservation? I need a little help, please! 🙏 #ReservationAssistance #XYZAirlines", "😡 Disappointed with @XYZAirlines today – my flight was seriously delayed. Time is precious, and punctuality matters! ⏰ #LateFlight #XYZAirlines"]
 
 def test_sentimiento_positivo(mocker, mensaje_positivo):
     mocker.patch('modelo.analisis_sentimientos.Analizador.analizar', return_value='POSITIVO')
@@ -59,10 +59,9 @@ def test_modelo_sentimiento_negativo(mocker, mensaje_negativo):
 def test_modelo_multiples_sentimientos(mocker, mensajes):
     mocker.patch('modelo.analisis_sentimientos.Analizador.multiples', return_value=["POSITIVO","NEUTRO","NEGATIVO"])
     
-    sentimientos = Analizador().multiples(mensajes)
+    resultado = Analizador().multiples(mensajes)
 
-    assert sentimientos == ["POSITIVO", "NEUTRO", "NEGATIVO"]
-
+    assert resultado == ["POSITIVO", "NEUTRO", "NEGATIVO"]
 
 """
 

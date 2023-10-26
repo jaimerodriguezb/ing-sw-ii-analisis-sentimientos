@@ -19,15 +19,24 @@ class Analizador():
 
         message_cv = CountVectorizer(vocabulary=vocabulary).transform([mensaje]).conjugate()
         sentimiento = self.__model.predict(message_cv)[0]
+        return self.map_sentiment(sentimiento)
         
+    def multiples(self, mensajes):
+    
+        sentimientos = []
+        for mensaje in mensajes:
+            sentimiento = self.analizar(mensaje)
+            sentimientos.append(sentimiento)
+        return sentimientos
+    
+    def traductor(self, sentimiento):
+
         if sentimiento == -1:
             return "NEGATIVO"
         elif sentimiento == 0:
             return "NEUTRO"
         elif sentimiento == 1:
             return "POSITIVO"
-        
-    def multiples(self, mensajes):
-        pass
+    
     
     
