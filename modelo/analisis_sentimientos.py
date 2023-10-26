@@ -19,7 +19,7 @@ class Analizador():
 
         message_cv = CountVectorizer(vocabulary=vocabulary).transform([mensaje]).conjugate()
         sentimiento = self.__model.predict(message_cv)[0]
-        return self.map_sentiment(sentimiento)
+        return self.traductor(sentimiento)
         
     def multiples(self, mensajes):
     
