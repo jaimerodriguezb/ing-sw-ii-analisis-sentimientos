@@ -56,9 +56,15 @@ def test_modelo_sentimiento_negativo(mocker, mensaje_negativo):
 
     assert resultado == 'NEGATIVO'
 
-def test_modelo_multiples_sentimientos(mocker, mensajes):
+def test_multiples_sentimientos(mocker, mensajes):
     mocker.patch('modelo.analisis_sentimientos.Analizador.multiples', return_value=["POSITIVO","NEUTRO","NEGATIVO"])
     
+    resultado = Analizador().multiples(mensajes)
+
+    assert resultado == ["POSITIVO", "NEUTRO", "NEGATIVO"]
+
+def test_modelo_sentimientos(mocker, mensajes):
+
     resultado = Analizador().multiples(mensajes)
 
     assert resultado == ["POSITIVO", "NEUTRO", "NEGATIVO"]
